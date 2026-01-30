@@ -1,3 +1,20 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0b0614;
+  color: white;
+}
+
+header,
+main {
+  position: relative;
+  z-index: 1;
+}
+
+main {
+  padding-top: 110px;
+}
+
 /* HERO SECTION */
 .hero {
   position: relative;
@@ -33,33 +50,101 @@
 }
 
 .nav-list {
-  display: flex;     /* parent flex container */
-  gap: 2rem;         /* works here */
+  display: flex;
+  gap: 2rem;
   list-style: none;
-  margin: 0;         /* valid value */
+  margin: 0;
   padding: 0;
 }
 
 .nav-item a {
   text-decoration: none;
-  color: black;
-  font-size: 1.5rem;
-  font-weight: bold;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.nav-item a:hover {
+  color: #8e2de2; /* purple accent */
 }
 
 .nav-container {
-  background-color: hsl(0, 0%, 60%);
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+
   width: 90%;
-  justify-content: center;
+  max-width: 1200px;
+  height: 64px;
+
+  display: flex;
   align-items: center;
-  margin-left: 70px;
+  justify-content: space-between;
+
+  /* smoky glass */
+  background: rgba(255, 255, 255, 0.13); /* NOT white, barely there */
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+
+  padding: 0 2rem;
+  z-index: 20;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
+
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  color: black;
+  color: white;
   display: flex;
   align-items: center;
 }
+
+/*Layout grid lines*/
+.bg-grid {
+  position: fixed;
+  inset: 0;
+
+  z-index: 0;              /* 👈 IMPORTANT */
+  pointer-events: none;
+
+  background-color: #0b0614;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.15) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+}
+
+.bg-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at top,
+    rgba(11, 6, 20, 0) 0%,
+    #0b0614 70%
+  );
+
+  pointer-events: none;
+}
+

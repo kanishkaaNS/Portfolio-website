@@ -1,0 +1,35 @@
+.click-spark {
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  width: 8px;
+  height: 2px;
+
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 9999;
+
+  transform-origin: left center;
+  animation: spark-line 360ms ease-out forwards;
+}
+
+@keyframes spark-line {
+  from {
+    opacity: 1;
+    transform:
+      translate(-50%, -50%)
+      rotate(calc(var(--angle) * 1rad))
+      translateX(0)
+      scaleX(1);
+  }
+
+  to {
+    opacity: 0;
+    transform:
+      translate(-50%, -50%)
+      rotate(calc(var(--angle) * 1rad))
+      translateX(var(--distance))
+      scaleX(0.2);
+  }
+}
