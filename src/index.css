@@ -1,6 +1,19 @@
-html, body {
+/* =========================
+   GLOBAL BASE
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   background-color: #0b0614;
   color: white;
 }
@@ -15,10 +28,13 @@ main {
   padding-top: 110px;
 }
 
-/* HERO SECTION */
+/* =========================
+   HERO SECTION
+   ========================= */
+
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow: hidden;
 }
@@ -38,11 +54,16 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 10vw;
+
+  /* responsive horizontal padding */
+  padding: 0 clamp(1.25rem, 6vw, 10vw);
   color: white;
 }
 
-/* Navbar styles */
+/* =========================
+   NAVBAR
+   ========================= */
+
 .nav-bar {
   display: flex;
   align-items: center;
@@ -67,7 +88,7 @@ main {
 }
 
 .nav-item a:hover {
-  color: #8e2de2; /* purple accent */
+  color: #8e2de2;
 }
 
 .nav-container {
@@ -85,7 +106,7 @@ main {
   justify-content: space-between;
 
   /* smoky glass */
-  background: rgba(255, 255, 255, 0.13); /* NOT white, barely there */
+  background: rgba(255, 255, 255, 0.13);
   backdrop-filter: blur(18px) saturate(120%);
   -webkit-backdrop-filter: blur(18px) saturate(120%);
 
@@ -100,7 +121,6 @@ main {
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
-
 .logo {
   font-size: 1.1rem;
   font-weight: 600;
@@ -110,12 +130,14 @@ main {
   align-items: center;
 }
 
-/*Layout grid lines*/
+/* =========================
+   GRID BACKGROUND
+   ========================= */
+
 .bg-grid {
   position: fixed;
   inset: 0;
-
-  z-index: 0;              /* 👈 IMPORTANT */
+  z-index: 0;
   pointer-events: none;
 
   background-color: #0b0614;
@@ -148,3 +170,38 @@ main {
   pointer-events: none;
 }
 
+/* =========================
+   RESPONSIVE ADJUSTMENTS
+   ========================= */
+
+@media (max-width: 768px) {
+  /* layout spacing */
+  main {
+    padding-top: 90px;
+  }
+
+  /* navbar */
+  .nav-container {
+    width: calc(100% - 1.5rem);
+    height: 56px;
+    padding: 0 1.25rem;
+    top: 1rem;
+  }
+
+  .nav-list {
+    gap: 1.25rem;
+  }
+
+  .nav-item a {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  /* calm grid on mobile */
+  .bg-grid {
+    background-size: 120px 120px;
+  }
+}

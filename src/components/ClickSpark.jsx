@@ -7,6 +7,9 @@ function ClickSpark({
   duration = 360
 }) {
   useEffect(() => {
+    // 🚫 Disable on touch devices (mobile/tablet)
+    if ("ontouchstart" in window) return;
+
     function handleClick(e) {
       for (let i = 0; i < sparkCount; i++) {
         const spark = document.createElement("span");
@@ -16,7 +19,7 @@ function ClickSpark({
           (2 * Math.PI * i) / sparkCount +
           (Math.random() - 0.5) * 0.35;
 
-        const distance = 18 + Math.random() * 12;
+        const distance = 14 + Math.random() * 8;
 
         spark.style.left = `${e.clientX}px`;
         spark.style.top = `${e.clientY}px`;
