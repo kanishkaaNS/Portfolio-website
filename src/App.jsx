@@ -6,8 +6,27 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Layout from "./components/Layout.jsx";
 import Hero from "./components/Hero.jsx";
 import About from './components/About.jsx';
+import Projects from './components/Projects.jsx';
 
 function App() {
+
+  gsap.fromTo(
+    ".project-reveal",
+    { opacity: 0, y: 40 },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power3.out",
+      stagger: 0.15,
+      scrollTrigger: {
+        trigger: ".projects-grid",
+        start: "top 80%",
+        once: true,
+      },
+    }
+  );
+
   useEffect(() => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +72,8 @@ function App() {
   return (
     <Layout>
       <Hero />
-      <About/>
+      <About />
+      <Projects/>
 
       {/* Temporary scroll space */}
       <section style={{ height: "100vh" }} />

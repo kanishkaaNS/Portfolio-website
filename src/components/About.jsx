@@ -49,7 +49,7 @@ function About() {
       <div className="about-interests reveal">
         <h3>Interests</h3>
         <p>
-          Outside of coding, I enjoy gaming and keeping up with Formula 1.
+          Outside of coding, I enjoy cooking, gaming and keeping up with Formula 1.
         </p>
       </div>
 
