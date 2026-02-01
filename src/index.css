@@ -55,9 +55,63 @@ main {
   flex-direction: column;
   justify-content: center;
 
-  /* responsive horizontal padding */
-  padding: 0 clamp(1.25rem, 6vw, 10vw);
+  padding: 4rem clamp(1.25rem, 6vw, 10vw);
   color: white;
+
+  align-items: center;   /* horizontal centering */
+  text-align: center;    /* text alignment */
+}
+
+/* Intro label */
+.hero-intro {
+  position: absolute;
+  top: 5rem;
+  left: 50%;                /* anchor point */
+  transform: translateX(-12.5em); /* 👈 CHANGE THIS VALUE */
+
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  letter-spacing: 0.1em;
+  opacity: 1;
+  color: white;
+  cursor: default;
+}
+
+.hero-wrapper {
+  top: 10em;
+}
+
+/* NAME */
+.hero-name {
+  font-size: clamp(3.2rem, 9vw, 6.8rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  cursor: default;
+}
+
+/* ROLE */
+.hero-role {
+  margin-top: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  opacity: 0.85;
+  cursor: default;
+}
+
+/* TAGLINE */
+.hero-tagline {
+  margin-top: 0.5rem;
+  max-width: 520px;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* CTA BUTTONS */
+.hero-actions {
+  margin-top: 2.2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 /* =========================
@@ -88,7 +142,7 @@ main {
 }
 
 .nav-item a:hover {
-  color: #8e2de2;
+  color: hsl(272, 76%, 70%);
 }
 
 .nav-container {
@@ -204,4 +258,108 @@ main {
   .bg-grid {
     background-size: 120px 120px;
   }
+}
+
+/* About Me */
+.about {
+  padding: 1rem clamp(1.25rem, 6vw, 10vw);
+  color: white;
+}
+
+/* Section title */
+.about-header h2 {
+  font-size: clamp(1.3rem, 2vw, 10rem);
+  font-weight: bolder;
+  letter-spacing: 0.08em;
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  cursor: default;
+}
+
+/* Text block */
+.about-content {
+  max-width: 800px;
+}
+
+.about-text {
+  font-size: clamp(1rem, 1.5vw, 3rem);
+  line-height: 1.65;
+  opacity: 0.75;
+  margin-bottom: 1.5rem;
+  cursor: default;
+}
+
+.about-interests {
+  margin-top: 5rem;
+  max-width: 640px;
+}
+
+.about-interests h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  opacity: 0.85;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.about-interests p {
+  font-size: 1rem;
+  opacity: 0.7;
+  line-height: 1.6;
+  cursor: default;
+}
+
+/* Skills section */
+.skills {
+  margin-top: 4.5rem;
+}
+
+.skills h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  opacity: 0.85;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem 3rem;
+}
+
+.skill-group h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.skill-group p {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+  opacity: 0.75;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  cursor: default;
+}
+
+.skill-group p::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background-color: hsl(272, 76%, 70%);
+  opacity: 0.85;
+
+  flex-shrink: 0;
 }
