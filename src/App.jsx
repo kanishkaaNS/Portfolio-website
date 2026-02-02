@@ -7,6 +7,7 @@ import Layout from "./components/Layout.jsx";
 import Hero from "./components/Hero.jsx";
 import About from './components/About.jsx';
 import Projects from './components/Projects.jsx';
+import Contact from './components/Contact.jsx';
 
 function App() {
 
@@ -73,7 +74,8 @@ function App() {
     <Layout>
       <Hero />
       <About />
-      <Projects/>
+      <Projects />
+      <Contact />
 
       {/* Temporary scroll space */}
       <section style={{ height: "100vh" }} />
