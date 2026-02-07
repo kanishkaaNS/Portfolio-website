@@ -1,4 +1,9 @@
 import emailjs from "@emailjs/browser";
+import githubAnim from "../assets/githubIcon.svg";
+import linkedinAnim from "../assets/linkedinIcon.svg";
+import emailAnim from "../assets/emailIcon.svg";
+
+
 
 function Contact() {
     function sendEmail(e) {
@@ -21,48 +26,83 @@ function Contact() {
 
   return (
     <section id="contact" className="contact">
-      <div className="contact-wrapper">
-        <header className="contact-header">
-          <h2>Let’s talk</h2>
-          <p>
-            Got a project, idea, or just want to say hi?  
-            My inbox is always open.
-          </p>
-        </header>
+      <div className="contact-container">
 
-        <form className="contact-form" onSubmit={sendEmail}>
+        {/* LEFT SIDE */}
+        <div className="contact-left">
+          <header className="contact-header">
+            <h2>Let’s talk</h2>
+            <p>
+              Got a project, idea, or just want to say hi?
+              I’m always open to connecting.
+            </p>
+          </header>
+
+          <div className="contact-social-icons">
+            <a
+              href="https://github.com/kanishkaaNS"
+              target="_blank"
+              rel="Github Profile"
+            >
+              <img src={githubAnim} alt="GitHub" />
+              <span>GitHub</span>
+            </a>
+
+            <a
+              href="https://linkedin.com/in/Kanishkaa-N-S"
+              target="_blank"
+              rel="LinkedIn Profile"
+            >
+              <img src={linkedinAnim} alt="LinkedIn" />
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:kanishkaans07@gmail.com"
+              aria-label="Email"
+            >
+              <img src={emailAnim} alt="Email" />
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE */}
+        <div className="contact-right">
+          <form className="contact-form" onSubmit={sendEmail}>
             <label>
-                Name
-                <input
+              Name
+              <input
                 type="text"
-                name="from_name"   // 👈 ADD THIS
+                name="from_name"
                 placeholder="Your name"
                 required
-                />
+              />
             </label>
 
             <label>
-                Email
-                <input
+              Email
+              <input
                 type="email"
-                name="from_email"  // 👈 ADD THIS
+                name="from_email"
                 placeholder="you@example.com"
                 required
-                />
+              />
             </label>
 
             <label>
-                Message
-                <textarea
-                name="message"     // 👈 ADD THIS
+              Message
+              <textarea
+                name="message"
                 placeholder="Tell me about your idea..."
                 rows="5"
                 required
-                />
+              />
             </label>
 
             <button type="submit">Send message</button>
-            </form>
+          </form>
+        </div>
 
       </div>
     </section>

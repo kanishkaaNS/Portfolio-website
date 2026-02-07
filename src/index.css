@@ -129,10 +129,35 @@ main {
    NAVBAR
    ========================= */
 
+.nav-container {
+  position: fixed;
+  top: 2rem;
+  right: 5rem;
+  
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+
+  padding: 0 2rem;          /* 👈 controls container width */
+  z-index: 20;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
 .nav-bar {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
 }
 
 .nav-list {
@@ -148,51 +173,12 @@ main {
   color: rgba(255, 255, 255, 0.92);
   font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
   transition: color 0.2s ease;
 }
 
 .nav-item a:hover {
-  color: hsl(272, 76%, 70%);
-}
-
-.nav-container {
-  position: fixed;
-  top: 1.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 90%;
-  max-width: 1200px;
-  height: 64px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  /* smoky glass */
-  background: rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(18px) saturate(120%);
-  -webkit-backdrop-filter: blur(18px) saturate(120%);
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-
-  padding: 0 2rem;
-  z-index: 20;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.45),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-.logo {
-  font-size: 1.05rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: white;
-  display: flex;
-  align-items: center;
+  color: #b678ed;
 }
 
 /* =========================
@@ -557,9 +543,19 @@ main {
   font-style: italic;
 }
 
+ /*contact*/
 .contact {
   background: #0b0614;
   padding: 6rem 1.5rem;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
 }
 
 .contact-wrapper {
@@ -567,16 +563,21 @@ main {
   margin: 0 auto;
 }
 
+.contact-left {
+  display: flex;
+  flex-direction: column;
+}
+
 .contact-header h2 {
   font-size: 2rem;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .contact-header p {
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 3rem;
   line-height: 1.6;
+  max-width: 420px;
 }
 
 .contact-form {
@@ -631,4 +632,41 @@ main {
 .contact-form button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 30px hsla(272, 76%, 70%, 0.4);
+}
+
+/*contact-socials*/
+.contact-social-icons {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-social-icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+.contact-social-icons img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  opacity: 0.85;
+  transform: translateZ(0);
+  transition:
+    transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.contact-social-icons a:hover img {
+  transform: translateY(-3px) scale(1.08);
+  opacity: 1;
+  filter:
+    drop-shadow(0 0 6px hsla(272, 100%, 50%, 0.45))
+    drop-shadow(0 0 14px hsla(272, 100%, 50%, 0.3));
 }
