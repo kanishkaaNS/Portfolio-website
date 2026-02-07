@@ -8,6 +8,7 @@ import Hero from "./components/Hero.jsx";
 import About from './components/About.jsx';
 import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
+import Resume from './components/Resume.jsx';
 
 function App() {
 
@@ -69,12 +70,30 @@ function App() {
     };
   }, []);
 
+  const progressBar = document.getElementById("scroll-progress");
+
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = `${progress}%`;
+
+    requestAnimationFrame(updateProgress);
+  }
+
+    updateProgress();
+
+
   
   return (
     <Layout>
       <Hero />
       <About />
       <Projects />
+      <Resume />
       <Contact />
 
       {/* Temporary scroll space */}

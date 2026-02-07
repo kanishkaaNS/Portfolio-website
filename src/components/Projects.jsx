@@ -32,14 +32,14 @@ function Projects() {
               target="_blank"
               rel="noreferrer"
             >
-              Live
+              Live Demo ↗
             </a>
             <a
               href="https://github.com/kanishkaaNS/Coorg-Spices-Emporium.git"
               target="_blank"
               rel="noreferrer"
             >
-              GitHub
+              GitHub ↗
             </a>
           </div>
         </article>
@@ -68,7 +68,7 @@ function Projects() {
               target="_blank"
               rel="noreferrer"
             >
-              GitHub
+              GitHub ↗
             </a>
           </div>
         </article>
@@ -95,7 +95,7 @@ function Projects() {
               target="_blank"
               rel="noreferrer"
             >
-              GitHub
+              GitHub ↗
             </a>
           </div>
         </article>

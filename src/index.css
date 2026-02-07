@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html,body{
+  overscroll-behavior: none;
+}
+
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -34,6 +38,41 @@ main {
 
 main {
   padding-top: 100px;
+}
+
+:root {
+  --accent: hsl(272, 76%, 70%); /* your theme color */
+}
+
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    color-mix(in srgb, var(--accent), white 25%)
+  );
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE / old Edge (just in case) */
+body {
+  -ms-overflow-style: none;
 }
 
 /* =========================
@@ -546,7 +585,7 @@ main {
  /*contact*/
 .contact {
   background: #0b0614;
-  padding: 6rem 1.5rem;
+  padding: 6rem 1.5rem 3rem; /* top | sides | bottom */
 }
 
 .contact-container {
@@ -669,4 +708,45 @@ main {
   filter:
     drop-shadow(0 0 6px hsla(272, 100%, 50%, 0.45))
     drop-shadow(0 0 14px hsla(272, 100%, 50%, 0.3));
+}
+
+/* Resume section */
+.resume {
+  background: #0b0614;
+  padding: 6rem 1.5rem;
+}
+
+.resume-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  border-left: 2px solid hsla(272, 76%, 70%, 0.35);
+}
+
+.resume h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.resume p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.resume-btn {
+  display: inline-block;
+  background: hsl(272, 76%, 70%);
+  color: #0b0614;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px hsla(272, 76%, 70%, 0.4);
 }
