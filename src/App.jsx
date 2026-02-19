@@ -95,10 +95,6 @@ function App() {
       <Projects />
       <Resume />
       <Contact />
-
-      {/* Temporary scroll space */}
-      <section style={{ height: "100vh" }} />
-      <section style={{ height: "100vh" }} />
     </Layout>
   );
 }
