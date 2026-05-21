@@ -10,6 +10,44 @@ function Projects() {
         <article className="project-card project-featured reveal">
           <span className="project-badge">Featured</span>
 
+          <h3>Cloud Storage System</h3>
+
+          <p className="project-description">
+            CloudStore is a full-stack cloud storage web application inspired by
+            platforms like Google Drive and Dropbox. It allows users to securely
+            upload, organize, and manage files through a modern responsive interface
+            with features like authentication, folder management, storage analytics,
+            and AWS S3 cloud integration.
+          </p>
+
+          <ul className="project-tech">
+            <li>React</li>
+            <li>FastAPI</li>
+            <li>PostgreSQL</li>
+            <li>AWS S3</li>
+            <li>JWT Auth</li>
+          </ul>
+
+          <div className="project-links">
+            <a
+              href="https://cloudstoragesystem-cjqn.onrender.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Live Demo ↗
+            </a>
+            <a
+              href="https://github.com/kanishkaaNS/Cloud-Storage-System"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub ↗
+            </a>
+          </div>
+        </article>
+
+        {/* Project 2 */}
+        <article className="project-card reveal">
           <h3>Coorg Emporium Spices</h3>
 
           <p className="project-description">
@@ -36,35 +74,6 @@ function Projects() {
             </a>
             <a
               href="https://github.com/kanishkaaNS/Coorg-Spices-Emporium.git"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub ↗
-            </a>
-          </div>
-        </article>
-
-        {/* Project 2 */}
-        <article className="project-card reveal">
-          <h3>Little Lemon Restaurant</h3>
-
-          <p className="project-description">
-            A frontend React application for a restaurant that allows users to
-            browse the menu, view weekly specials, and make table reservations
-            through a validated booking form.
-          </p>
-
-          <ul className="project-tech">
-            <li>React</li>
-            <li>React Router</li>
-            <li>JavaScript</li>
-            <li>HTML</li>
-            <li>CSS</li>
-          </ul>
-
-          <div className="project-links">
-            <a
-              href="https://github.com/kanishkaaNS/Little-Lemon.git"
               target="_blank"
               rel="noreferrer"
             >
