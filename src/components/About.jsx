@@ -7,7 +7,7 @@ function About() {
 
       <div className="about-content reveal">
         <p className="about-text">
-          I’m a frontend developer who enjoys building clean, modern websites with a strong focus on user experience.
+          I’m an aspiring frontend / UI developer who enjoys building clean, modern websites with a strong focus on user experience.
           I mainly work with React and care a lot about structure, spacing, and smooth interactions. 
           I like designs that feel intentional, simple, breathable layouts with subtle animations that enhance the experience without stealing attention.
         </p>
