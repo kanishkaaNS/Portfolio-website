@@ -9,7 +9,7 @@ function Resume(){
                 </p>
 
                 <a
-                href="/Kanishkaa-N-S_UI-Frontend_Resume.pdf"
+                href="/Kanishkaa_N_S_Frontend_Developer_Resume"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="resume-btn"
