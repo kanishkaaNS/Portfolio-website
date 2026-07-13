@@ -1,4 +1,4 @@
-import resumePdf from '../assets/Kanishkaa_N_S_Frontend_Developer_Resume.pdf';
+import resumePdf from '../assets/Kanishkaa_N_S_Resume.pdf';
 
 function Resume(){
     return(
@@ -12,7 +12,7 @@ function Resume(){
 
                 <a
                 href={resumePdf}
-                download="Kanishkaa_N_S_Frontend_Developer_Resume.pdf"
+                download="Kanishkaa_N_S_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="resume-btn"
